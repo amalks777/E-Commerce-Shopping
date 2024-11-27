@@ -2,12 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import ProductDetails from './components/Products';
+import Womens from './components/women';
+import ShoppingCart from './components/shoppingCart';
+import Login from './components/signup&Login/Login';
+import SignUp from './components/signup&Login/SignUp';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route path='/' element={<App />}/>
+        <Route path='/products' element={<ProductDetails/>}/>
+        <Route path='/women' element={<Womens/>}/>
+        <Route path='/cart' element={<ShoppingCart/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<SignUp/>}/>
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
